@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Coversor de moedasKotlin</string>
+    <string name="conversor_de_moedas">CONVERSOR DE MOEDAS</string>
+    <string name="insira_o_valor_atual_do_d_lar">Insira o valor atual do dólar</string>
+    <string name="d_lar_hoje">Dólar hoje:</string>
+    <string name="quantidade_em_d_lar">Quantidade em Dólar:</string>
+    <string name="button">Button</string>
+    <string name="r">R$</string>
+    <string name="todo">TODO</string>
+    <string name="insira_a_quantidade_que_deseja_converter">Insira a quantidade que deseja converter</string>
 </resources>
