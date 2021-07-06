@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var etQtdDolar: EditText
     lateinit var tvValorConvertido: TextView
     lateinit var btConverter: Button
+    val dec = DecimalFormat("#,###.00") //2 casas decimais, separando milhar por "," e decimais por "."
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,10 +29,17 @@ class MainActivity : AppCompatActivity() {
 
         btConverter.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
-                var digitado = etValorDolar.text.toString()
-                Toast.makeText(applicationContext, digitado, Toast.LENGTH_LONG).show()
+
+                var valorDolar = etValorDolar.text.toString().toDouble()
+                var qtDolar = etQtdDolar.text.toString().toDouble()
+                var valorConvertido = valorDolar * qtDolar
+
+                tvValorConvertido.text = "R$ ${dec.format(valorConvertido)}"
+
+                Toast.makeText(applicationContext, "O valor foi convertido!", Toast.LENGTH_LONG).show()
             }
 
         })
     }
 }
+
