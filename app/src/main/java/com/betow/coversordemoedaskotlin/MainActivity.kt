@@ -26,12 +26,14 @@ class MainActivity : AppCompatActivity() {
         tvValorConvertido = findViewById(R.id.txtResultadoConvertido)
         btConverter = findViewById(R.id.botao)
 
-        var valorDolar = etValorDolar.text.toString().toDouble()
-        var qtDolar = etQtdDolar.text.toString().toDouble()
+
 
 
         btConverter.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
+
+                var valorDolar = etValorDolar.text.toString().toDouble()
+                var qtDolar = etQtdDolar.text.toString().toDouble()
 
                 var valorConvertido = valorDolar * qtDolar
 
