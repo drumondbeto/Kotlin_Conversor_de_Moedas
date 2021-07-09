@@ -16,6 +16,7 @@
         android:hint="Valor do dolar"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
+        android:text="5.26"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -27,7 +28,6 @@
         android:layout_marginTop="32dp"
         android:text="Converter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtResultadoConvertido" />
 
@@ -87,9 +87,11 @@
         android:hint="Quantidade"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
+        android:text="0"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/txtResultadoConvertido"
