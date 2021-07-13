@@ -27,18 +27,22 @@ class MainActivity : AppCompatActivity() {
         btConverter = findViewById(R.id.botao)
 
 
-        btConverter.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(p0: View?) {
+        btConverter.setOnClickListener {
 
-                var valorDolar = etValorDolar.text.toString().toDouble()
-                var qtDolar = etQtdDolar.text.toString().toDouble()
-                var valorConvertido = valorDolar * qtDolar
+            var valorConvertido = converterDolarParaReal()
+            exibirValorEmReais(valorConvertido)
 
-                tvValorConvertido.text = "R$ ${dec.format(valorConvertido)}"
+            Toast.makeText(applicationContext, "O valor foi convertido!", Toast.LENGTH_LONG).show()
+        }
+    }
 
-                Toast.makeText(applicationContext, "O valor foi convertido!", Toast.LENGTH_LONG).show()
-            }
-
-        })
+    fun converterDolarParaReal: Double {
+        var valorDolar = etValorDolar.text.toString().toDouble()
+        var qtDolar = etQtdDolar.text.toString().toDouble()
+        var valorConvertido = valorDolar * qtDolar
+        return (valorConvertido)
+    }
+    fun exibirValorEmReais(valorConvertido:Double) {
+        tvValorConvertido.text = "R$ ${dec.format(valorConvertido)}"
     }
 }
